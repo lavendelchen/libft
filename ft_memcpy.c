@@ -5,26 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 10:22:37 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/16 17:13:12 by shaas            ###   ########.fr       */
+/*   Created: 2021/06/17 15:10:18 by shaas             #+#    #+#             */
+/*   Updated: 2021/06/17 17:22:15 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// shit's weird man, i need help tomorrow to understand this function
+// need to remove the main function + header files
 
 #include <stdio.h>
 #include <string.h>
 
-//void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+{
+	size_t	i;
+	char	*char_dst;
+	char	*char_src;
 
-
-
+	char_dst = (char *)dst;
+	char_src = (char *)src;
+	i = 0;
+	while (i < n)
+	{
+		*char_dst = *char_src;
+		char_dst++;
+		char_src++;
+		i++;
+	}
+	return (dst);
+}
 
 int	main(void)
 {
-	int	src[] = {1, 2, 3, 500};
-	char	dst[] = "i need a greeting";
+	int	src[] = {1200, 1, 2, 3};
+	int	dst[] = {0, 1, 2, 3};
 
-	memcpy(dst, src, 7);
-	printf("%s", dst);
+	ft_memcpy(dst, src, 4);
+	printf("%d", *dst);
 }

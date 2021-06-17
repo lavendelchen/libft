@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 11:14:11 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/16 16:03:59 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/17 17:38:44 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	*ft_memset(void *b, int c, size_t len)
 
 int	main(void)
 {
-	char	str1[6] = "hello";
 	char	str2[6] = "hello";
+	char	str1[6] = "hello";
 
-	printf("pro_memset():  %s\n", memset(str1, 78, 8));
-	printf("ft_memset():  %s", ft_memset(str2, 78, 8));
+	printf("pro_memset():  %s\n", memset(str1, 78, 5));
+	printf("ft_memset():  %s", ft_memset(str2, 78, 5));
 	return (0);
 }
