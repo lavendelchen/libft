@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 11:14:11 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/16 16:37:14 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/21 17:27:06 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ft_bzero(void *s, size_t n)
 
 int	main(void)
 {
-	char	str1[12] = "sweet stuff";
-	char	str2[12] = "sweet stuff";
+	char	str1[20] = "⬇️sweet stuff";
+	char	str2[20] = "⬇️sweet stuff";
 
 	char *str1_rep = str1;
 	char *str2_rep = str2;
