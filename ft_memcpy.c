@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 15:10:18 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/17 17:22:15 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/21 14:13:49 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 	char	*char_dst;

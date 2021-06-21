@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 17:45:00 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/18 12:33:09 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/21 14:14:16 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include <string.h>
 #include <stdio.h>
 
-void	*ft_memccpy(void *restrict dst, const void *restrict src,
-int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t	i;
 	char	*char_dst;
