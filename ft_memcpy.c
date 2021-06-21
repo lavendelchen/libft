@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 15:10:18 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/21 17:44:38 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/21 20:26:35 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 int	main(void)
 {
-	char	src[] = "wh⬇️tever";
+	int	src[4] = {1287, 2, 3, 4};
 	char	dst[] = "this is us";
 
 	char	src2[] = "wh⬇️tever";
 	char	dst2[] = "this is us";
-	ft_memcpy(dst, src, 4);
+	ft_memcpy(dst, src, 1);
 	memcpy(dst2, src2, 4);
 	printf("%s, %s", dst, dst2);
 }
