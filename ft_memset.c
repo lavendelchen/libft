@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 11:14:11 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/21 17:26:36 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/22 20:16:00 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	while (i < len)
 	{
 		char_b = (unsigned char *)b;
-		*char_b = c;
+		*char_b = (unsigned char)c;
 		b++;
 		i++;
 	}

@@ -6,9 +6,11 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 10:38:14 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/21 20:16:09 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/22 16:07:08 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//do i need to do it like that or can i refer to ft_strlen somehow
 
 #include <stdio.h>
 #include <string.h>
@@ -26,11 +28,10 @@ size_t	ft_strlen(const char *s)
 	return (num);
 }
 
-size_t	ft_strlcpy(char* dst, const char* src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	ret;
-
 
 	ret = ft_strlen(src);
 	i = 0;
@@ -43,15 +44,15 @@ size_t	ft_strlcpy(char* dst, const char* src, size_t dstsize)
 	}
 	if (dstsize != 0)
 		*dst = '\0';
-	return(ret);
+	return (ret);
 }
 
-int	main()
+int	main(void)
 {
-	char dst[] = "hewoo";
-	char src[] = "goo";
-	char dst2[] = "hewoo";
-	char src2[] = "goo";
+	char	dst[] = "hewoo";
+	char	src[] = "goo";
+	char	dst2[] = "hewoo";
+	char	src2[] = "goo";
 
-	printf("strlcpy: %s, %s, ft_strlcpy: %zu, %s", strncpy(dst, src, 9), dst, ft_strlcpy(dst2, src2, 6), dst2);
+	printf("strlcpy: %s, %s, ft_strlcpy: %zu, %s", strlcpy(dst, src, 6), dst, ft_strlcpy(dst2, src2, 6), dst2);
 }
