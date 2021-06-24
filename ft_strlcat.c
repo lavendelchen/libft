@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 10:37:50 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/22 17:13:33 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/24 15:52:40 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlen(const char *s) // ft_strlen doesn't have the terminating null byte!!! (its confusing because you start counting at 0)
+static size_t	ft_strlen(const char *s) // ft_strlen doesn't have the terminating null byte!!! (its confusing because you start counting at 0)
 {
 	size_t	num;
 
