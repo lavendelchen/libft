@@ -6,11 +6,14 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 17:45:00 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/25 15:26:40 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/22 20:18:09 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//these headers & the main need to go
+
+#include <string.h>
+#include <stdio.h>
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
@@ -31,4 +34,19 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		i++;
 	}
 	return (NULL);
+}
+
+int	main(void)
+{
+	char	src1[] = "<ü3";
+	char	dst1[] = "fuck";
+	char	*ptr1;
+
+	char	src2[] = "<ü3";
+	char	dst2[] = "fuck";
+	char	*ptr2;
+
+	ptr1 = memccpy(dst1, src1, 129, 4);
+	ptr2 = ft_memccpy(dst2, src2, 129, 4);
+	printf("memccpy: %p, %s\nft_memccpy: %p, %s", ptr1, dst1, ptr2, dst2);
 }

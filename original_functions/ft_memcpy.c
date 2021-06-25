@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/18 12:23:08 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/25 15:26:52 by shaas            ###   ########.fr       */
+/*   Created: 2021/06/17 15:10:18 by shaas             #+#    #+#             */
+/*   Updated: 2021/06/21 20:26:35 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// need to remove the main function + header files
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+#include <stdio.h>
+#include <string.h>
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t		i;
 	char		*char_dst;
@@ -21,21 +24,24 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char_dst = (char *)dst;
 	char_src = (const char *)src;
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		if (char_dst > char_src)
-		{
-			*(char_dst + (len - 1)) = *(char_src + (len - 1));
-			char_dst--;
-			char_src--;
-		}
-		else
-		{
-			*char_dst = *char_src;
-			char_dst++;
-			char_src++;
-		}
+		*char_dst = *char_src;
+		char_dst++;
+		char_src++;
 		i++;
 	}
 	return (dst);
+}
+
+int	main(void)
+{
+	int	src[4] = {1287, 2, 3, 4};
+	char	dst[] = "this is us";
+
+	char	src2[] = "wh⬇️tever";
+	char	dst2[] = "this is us";
+	ft_memcpy(dst, src, 1);
+	memcpy(dst2, src2, 4);
+	printf("%s, %s", dst, dst2);
 }

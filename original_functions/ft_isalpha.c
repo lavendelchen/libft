@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 17:40:09 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/25 15:26:15 by shaas            ###   ########.fr       */
+/*   Created: 2021/06/16 10:22:14 by shaas             #+#    #+#             */
+/*   Updated: 2021/06/24 17:45:52 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ctype.h>
+#include <stdio.h>
 
-int	ft_isalnum(int c)
+int	ft_isalpha(int c)
 {
-	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
+	if ((65 <= c && c <= 90) || (97 <= c && c <= 122))
 		return (1);
 	else
 		return (0);

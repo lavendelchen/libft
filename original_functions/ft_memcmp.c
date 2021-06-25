@@ -6,11 +6,15 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 16:18:10 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/25 15:26:46 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/21 17:44:33 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//"This behavior is not required by C and portable code should
+//only depend on the sign of the returned value." what does that mean??
+
+#include <stdio.h>
+#include <string.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -29,5 +33,15 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		char_s2++;
 		i++;
 	}
+	return (0);
+}
+
+int	main(void)
+{
+	char	str1[20] = "hel⬇️tyjtyj"; // ⬇️ - ⬆️ +
+	char	str2[20] = "heliiii";
+
+	printf("memcmp:  %d\n", memcmp(str1, str2, 6));
+	printf("ft_memcmp:  %d", ft_memcmp(str1, str2, 6));
 	return (0);
 }

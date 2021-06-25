@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 17:40:09 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/25 15:26:15 by shaas            ###   ########.fr       */
+/*   Created: 2021/06/24 17:40:27 by shaas             #+#    #+#             */
+/*   Updated: 2021/06/24 17:50:07 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ctype.h>
+#include <stdio.h>
 
-int	ft_isalnum(int c)
+int	ft_isprint(int c)
 {
-	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
+	if (32 <= c && c <= 126)
 		return (1);
 	else
 		return (0);
+}
+
+int	main(void)
+{
+	printf("the argument is a printable character : %d\n", ft_isprint('@'));
+	printf("the argument is aprintable character : %d\n", isprint('@'));
 }

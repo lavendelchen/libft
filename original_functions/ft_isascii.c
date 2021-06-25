@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 17:40:09 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/25 15:26:15 by shaas            ###   ########.fr       */
+/*   Created: 2021/06/24 17:40:13 by shaas             #+#    #+#             */
+/*   Updated: 2021/06/24 17:47:12 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ctype.h>
+#include <stdio.h>
 
-int	ft_isalnum(int c)
+int	ft_isascii(int c)
 {
-	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
+	if (0 <= c && c <= 127)
 		return (1);
 	else
 		return (0);
+}
+
+int	main(void)
+{
+	printf("the argument is an ascii character : %d\n", ft_isascii('a'));
+	printf("the argument is an ascii character : %d\n", isascii('a'));
 }

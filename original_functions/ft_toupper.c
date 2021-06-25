@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/24 17:40:09 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/25 15:26:15 by shaas            ###   ########.fr       */
+/*   Created: 2021/06/22 20:09:25 by shaas             #+#    #+#             */
+/*   Updated: 2021/06/24 18:06:51 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <ctype.h>
+#include <stdio.h>
 
-int	ft_isalnum(int c)
+int	ft_toupper(int c)
 {
-	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
-		return (1);
-	else
-		return (0);
+	if (97 <= c && c <= 122)
+		c = c - 32;
+	return (c);
+}
+
+int	main(void)
+{
+	printf("ft: %c, %c\n", ft_toupper(10), 10);
+	printf(": %c, %c\n", toupper(10), 10);
 }

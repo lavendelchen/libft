@@ -6,11 +6,13 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 13:05:26 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/25 15:26:00 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/24 17:38:43 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <limits.h>
 
 static int	ft_whitespace(char c)
 {
@@ -46,4 +48,12 @@ int	ft_atoi(const char *str)
 	}
 	i = i * sign;
 	return (i);
+}
+
+int	main(void)
+{
+	char	str[] = "   2147483648whefiuhwef"; //returns 0 if before the number there's
+
+	printf("ft_atoi: %d, %s\natoi: %d, %s", ft_atoi(str), str, atoi(str), str);
+	return (0);
 }
