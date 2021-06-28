@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 10:37:50 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/24 15:52:40 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/28 14:08:12 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,28 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	ret;
 
+	i = 0;
 	ret = ft_strlen(src) + ft_strlen(dst);
 	if (ft_strlen(dst) > dstsize)
-		ret = ret - (ft_strlen(dst) - dstsize);
-	i = 0;
+		ret = ret - (ft_strlen(dst) - dstsize); // workts mit 0?
+	if (dstsize == 0)
+		return (ret);
 	while (*dst != '\0')
 	{
 		dst++;
 		i++;
 	}
-	while (i < dstsize - 1)
+	if (i < dstsize) //only if dst doesnt overflow buffer
 	{
-		*dst = *src;
-		dst++;
-		src++;
-		i++;
-	}
-	if (dstsize != 0)
+		while (i < dstsize - 1)
+		{
+			*dst = *src;
+			dst++;
+			src++;
+			i++;
+		}
 		*dst = '\0';
+	}
 	return (ret);
 }
 

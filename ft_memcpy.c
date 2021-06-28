@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 15:10:18 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/25 15:26:49 by shaas            ###   ########.fr       */
+/*   Updated: 2021/06/28 13:00:44 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char		*char_dst;
 	const char	*char_src;
 
+	if (!dst && !src)
+		return (NULL);
 	char_dst = (char *)dst;
 	char_src = (const char *)src;
 	i = 0;
