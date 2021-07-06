@@ -6,13 +6,15 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:34:21 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/06 13:11:40 by shaas            ###   ########.fr       */
+/*   Updated: 2021/07/05 20:21:16 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(const char *s1, const char *s2) //sonderfaelle abklaeren, was wenn leer und so
 {
 	int		i;
 	size_t	len_1;
@@ -39,4 +41,16 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	}
 	join[i] = '\0';
 	return (join);
+}
+
+int	main(void)
+{
+	char	s1[] = "hii";
+	char	s2[] = "hii";
+	char	*join;
+
+	join = ft_strjoin(s1, s2);
+	printf("%s", join);
+	free(join);
+	return (0);
 }
