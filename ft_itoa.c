@@ -6,17 +6,17 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:36:26 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/06 19:03:24 by shaas            ###   ########.fr       */
+/*   Updated: 2021/07/07 15:39:33 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_assign(int n, char *nbr, int i)
+static int	ft_assign(int n, char *nbr, int i)
 {
 	if (n == -2147483648)
 	{
-		nbr = ft_memmove(nbr, "-2147483648", 11);
+		nbr = ft_memmove(nbr, "-2147483648", 12);
 		return (11);
 	}
 	else if (n < 0)
@@ -42,7 +42,7 @@ int	ft_assign(int n, char *nbr, int i)
 
 char	*ft_itoa(int n)
 {
-	char	nbr[11];
+	char	nbr[12];
 	int		i;
 	char	*str;
 

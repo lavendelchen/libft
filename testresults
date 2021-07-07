@@ -53,16 +53,15 @@ Total : 24/24
 
 Part2 functions
 
-FUNCTION              NORME          COMPIL.     FORBIDDEN FUNC.  TESTS               RESULT
 ft_strmapi            check failed   failure     compil. failed   compil. failed      KO
 ft_substr             ok             success     clean            ✓✓✓✓✓               OK
 ft_strjoin            ok             success     clean            ✓✓✓✓                OK
 ft_strtrim            ok             success     clean            ✓✓✓✓✓               OK
 ft_split              check failed   failure     compil. failed   compil. failed      KO
-ft_itoa               check failed   failure     compil. failed   compil. failed      KO
+ft_itoa               ok             success     clean            ✓✓✓✓✓✓✓✓✓✓          KO
 ft_putchar_fd         ok             failure     compil. failed   compil. failed      KO
 ft_putstr_fd          ok             failure     compil. failed   compil. failed      KO
-ft_putendl_fd         ok             failure     compil. failed   compil. failed      KO
+ft_putendl_fd         check failed   failure     compil. failed   compil. failed      KO
 ft_putnbr_fd          ok             failure     compil. failed   compil. failed      KO
 
 Total : 3/10
@@ -135,7 +134,8 @@ ft_strtrim:    [OK] [OK] [OK] [OK] [OK] [KO] [OK] [OK] [OK] [💥 ]
 [KO]: your strtrim did not allocate the good size so the \0 test may be false
 
 ft_split:      [MISSING]
-ft_itoa:       [MISSING]
+ft_itoa:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+
 ft_strmapi:    [MISSING]
 ft_putchar_fd: [MISSING]
 ft_putstr_fd:  [MISSING]

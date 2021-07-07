@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 12:23:08 by shaas             #+#    #+#             */
-/*   Updated: 2021/06/21 17:44:42 by shaas            ###   ########.fr       */
+/*   Updated: 2021/07/07 14:54:24 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 int	main(void)
 {
-	char	src1[] = "St⬇️rt stop";
+	char	src1[12];
 	char	*ptr1;
 
-	char	src2[] = "St⬇️rt stop";
+	char	src2[12];
 	char	*ptr2;
 
-	ptr1 = memmove(&src1[1], &src1[0], 3);
-	ptr2 = ft_memmove(&src2[1], &src2[0], 3);
-	printf("memmove: %p, %s\nft_memmove: %p, %s", ptr1, src1, ptr2, src2);
+	ptr1 = memmove(src1, "-2147483648", 12);
+	ptr2 = ft_memmove(src2, "-2147483648", 12);
+	printf("memmove: %p, %s\nft_memmove: %p, %s", ptr1, ptr1, ptr2, ptr2);
 }
