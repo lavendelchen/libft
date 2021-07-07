@@ -52,3 +52,14 @@ char	*ft_itoa(int n)
 	str = ft_strdup(nbr);
 	return (str);
 }
+
+int	main(void)
+{
+	int		n = -40000;
+	char	*nbr;
+
+	nbr = ft_itoa(n);
+	printf("itoa:  %s\n", nbr);
+	free (nbr);
+	return (0);
+}

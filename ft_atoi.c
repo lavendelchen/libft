@@ -25,10 +25,8 @@ int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
-	int	count;
 
 	i = 0;
-	count = 0;
 	sign = 1;
 	while (ft_whitespace(*str) == 1)
 		str++;
