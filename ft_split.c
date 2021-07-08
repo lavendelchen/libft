@@ -6,13 +6,13 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:36:02 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/07 20:10:24 by shaas            ###   ########.fr       */
+/*   Updated: 2021/07/08 13:39:48 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count(const char *s, char c)
+static int	ft_count(const char *s, char c)
 {
 	int	i;
 	int	count;
@@ -33,35 +33,43 @@ int	ft_count(const char *s, char c)
 	return (count);
 }
 
+static int	ft_insert(const char *s, char c, char **split)
+{
+	int	head;
+	int	tail;
+	int	count;
+
+	head = 0;
+	tail = 0;
+	count = 0;
+	while (s[head] != '\0')
+	{
+		if (s[head] != c)
+		{
+			tail = head;
+			while (s[tail] != c && s[tail] != '\0')
+				tail++;
+			split[count] = (char *)malloc(sizeof(char) * (tail - head + 1));
+			if (split[count] == NULL)
+				return (0);
+			ft_strlcpy(split[count], &s[head], tail - head + 1);
+			count++;
+			head = tail - 1;
+		}
+		head++;
+	}
+	split[count] = NULL;
+	return (1);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**split;
-	int		i;
-	int		j;
-	int		k;
 
-	i = 0;
-	j = 0;
-	k = 0;
 	split = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (split == NULL)
 		return (split);
-	while (s[i] != '\0')
-	{
-		if (s[i] != c)
-		{
-			j = i;
-			while (s[j] != c && s[j] != '\0')
-				j++; // outsource, striteri
-			split[k] = (char *)malloc(sizeof(char) * (j - i + 1));
-			if (split[k] == NULL)
-				return (NULL);
-			ft_strlcpy(split[k], &s[i], j - i + 1);
-			k++;
-			i = j - 1;
-		}
-		i++;
-	}
-	split[k] = NULL;
+	if (ft_insert (s, c, split) == 0)
+		return (NULL);
 	return (split);
 }
