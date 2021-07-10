@@ -6,7 +6,7 @@
 #    By: shaas <shaas@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/25 11:26:14 by shaas             #+#    #+#              #
-#    Updated: 2021/07/09 17:45:02 by shaas            ###   ########.fr        #
+#    Updated: 2021/07/10 17:43:48 by shaas            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ O_FILES = $(C_FILES:.c=.o)
 BONUS_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-BONUS_O_FILES = $(C_FILES:.c=.o) $(BONUS_FILES:.c=.o)
+BONUS_O_FILES =  $(BONUS_FILES:.c=.o)
 
 all: $(NAME) bonus
 
@@ -44,10 +44,8 @@ fclean: clean
 
 re: fclean all
 
-bonus: bonuscomp
-	ar rc $(NAME) $(BONUS_O_FILES)
-
 bonuscomp:
 	$(COMP) $(BONUS_FILES)
 
-
+bonus: bonuscomp
+	ar rc $(NAME) $(BONUS_O_FILES)
