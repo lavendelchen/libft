@@ -49,3 +49,6 @@ bonuscomp:
 
 bonus: bonuscomp
 	ar rc $(NAME) $(BONUS_O_FILES)
+
+bonusclean:
+	rm -f $(BONUS_O_FILES)
