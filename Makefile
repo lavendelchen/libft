@@ -6,7 +6,7 @@
 #    By: shaas <shaas@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/25 11:26:14 by shaas             #+#    #+#              #
-#    Updated: 2021/07/10 17:43:48 by shaas            ###   ########.fr        #
+#    Updated: 2021/07/13 17:49:46 by shaas            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME): comp
 	ar rc $(NAME) $(O_FILES)
 
 clean:
-	rm -f $(O_FILES)
+	rm -f $(O_FILES) $(BONUS_O_FILES)
 
 fclean: clean
 	rm -f $(NAME)

@@ -3,11 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: laven <laven@student.42.fr>                +#+  +:+       +#+        */
+/*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:15:47 by laven             #+#    #+#             */
-/*   Updated: 2021/07/12 20:15:58 by laven            ###   ########.fr       */
+/*   Updated: 2021/07/13 20:43:31 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*curr;
+
+	while (curr)
+}
