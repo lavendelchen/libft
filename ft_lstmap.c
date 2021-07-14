@@ -3,11 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: laven <laven@student.42.fr>                +#+  +:+       +#+        */
+/*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/12 20:16:01 by laven             #+#    #+#             */
-/*   Updated: 2021/07/12 20:16:09 by laven            ###   ########.fr       */
+/*   Created: 2021/07/12 20:16:01 by shaas             #+#    #+#             */
+/*   Updated: 2021/07/14 22:14:24 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+{
+	t_list	*new_lst;
+	t_list	*new_curr;
+	t_list	*curr;
+
+	if (f != NULL && del != NULL && lst != NULL) // dont know why this doesnt work.
+	{
+		new_lst = ft_lstnew(f(lst->content));
+		if (new_lst == NULL)
+			return (NULL);
+		curr = lst->next;
+		while (curr != NULL)
+		{
+			new_curr = ft_lstnew(f(curr->content));
+			if (new_curr == NULL)
+			{
+				ft_lstclear(&new_lst, del);
+				return (NULL);
+			}
+			ft_lstadd_back(&new_lst, new_curr);
+			curr = curr->next;
+		}
+	}
+	else
+		return (NULL);
+	return (new_lst);
+}

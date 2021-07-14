@@ -6,7 +6,7 @@
 #    By: shaas <shaas@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/25 11:26:14 by shaas             #+#    #+#              #
-#    Updated: 2021/07/13 17:49:46 by shaas            ###   ########.fr        #
+#    Updated: 2021/07/14 20:28:01 by shaas            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,3 @@ bonuscomp:
 
 bonus: bonuscomp
 	ar rc $(NAME) $(BONUS_O_FILES)
-
-bonusclean:
-	rm -f $(BONUS_O_FILES)
