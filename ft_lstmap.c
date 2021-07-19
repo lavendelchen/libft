@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 20:16:01 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/18 20:04:32 by shaas            ###   ########.fr       */
+/*   Updated: 2021/07/19 19:48:16 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_curr;
 	t_list	*curr;
 
-	if (f != NULL && del != NULL && lst != NULL) // dont know why this doesnt work.
+	if (f != NULL && del != NULL && lst != NULL)
 	{
 		new_lst = ft_lstnew(f(lst->content));
 		if (new_lst == NULL)
