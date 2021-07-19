@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 15:07:38 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/13 17:08:22 by shaas            ###   ########.fr       */
+/*   Updated: 2021/07/19 20:07:03 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	main(void)
 {
 	t_list	*head;
 	t_list	*tail;
-	const int val = 10;
-	const int val1 = 25;
+	int val = 10;
+	int val1 = 25;
 
 	head = (t_list *)malloc(sizeof(t_list));
 	if (head == NULL)

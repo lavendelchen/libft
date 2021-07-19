@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:36:02 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/08 13:39:48 by shaas            ###   ########.fr       */
+/*   Updated: 2021/07/19 20:05:23 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ char	**ft_split(const char *s, char c)
 {
 	char	**split;
 
+	if (s == NULL)
+		return (NULL);
 	split = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (split == NULL)
 		return (split);
