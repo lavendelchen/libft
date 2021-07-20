@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:36:02 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/19 20:05:23 by shaas            ###   ########.fr       */
+/*   Updated: 2021/07/20 16:20:53 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ static int	ft_count(const char *s, char c)
 	return (count);
 }
 
+static int	malloc_fail(char **split, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i <= count)
+	{
+		free(split[i]);
+		i++;
+	}
+	free (split);
+	return (0);
+}
+
 static int	ft_insert(const char *s, char c, char **split)
 {
 	int	head;
@@ -51,7 +65,7 @@ static int	ft_insert(const char *s, char c, char **split)
 				tail++;
 			split[count] = (char *)malloc(sizeof(char) * (tail - head + 1));
 			if (split[count] == NULL)
-				return (0);
+				return (malloc_fail(split, count));
 			ft_strlcpy(split[count], &s[head], tail - head + 1);
 			count++;
 			head = tail - 1;
