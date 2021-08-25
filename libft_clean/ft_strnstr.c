@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 18:23:33 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/28 13:21:39 by shaas            ###   ########.fr       */
+/*   Created: 2021/06/22 20:44:54 by shaas             #+#    #+#             */
+/*   Updated: 2021/06/25 15:27:31 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	num;
+	size_t	i;
+	size_t	count;
 
-	num = 0;
-	while (*s != '\0')
+	i = 0;
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (*haystack != '\0' && i < len)
 	{
-		num++;
-		s++;
+		count = 0;
+		while (haystack[count] == needle[count] && (i + count) < len)
+		{
+			count++;
+			if (needle[count] == '\0')
+				return ((char *)haystack);
+		}
+		haystack++;
+		i++;
 	}
-	return (num);
-}
-
-int	main(void)
-{
-	char	str1[20] = ";oeaiffhbv;erb;eubr";
-	char	str2[20] = "hello";
-
-	printf("strlen:  %zu\n", strlen(str1));
-	printf("ft_strlen:  %zu", ft_strlen(str2));
-	return (0);
+	return (NULL);
 }

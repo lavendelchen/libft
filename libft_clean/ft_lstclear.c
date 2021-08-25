@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 18:23:33 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/28 13:21:39 by shaas            ###   ########.fr       */
+/*   Created: 2021/07/12 20:15:09 by shaas             #+#    #+#             */
+/*   Updated: 2021/07/19 19:51:53 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	size_t	num;
+	t_list	*curr;
+	t_list	*curr2;
 
-	num = 0;
-	while (*s != '\0')
+	if (del != NULL)
 	{
-		num++;
-		s++;
+		curr = *lst;
+		while (curr != NULL)
+		{
+			curr2 = curr->next;
+			ft_lstdelone(curr, del);
+			curr = curr2;
+		}
+		*lst = NULL;
 	}
-	return (num);
-}
-
-int	main(void)
-{
-	char	str1[20] = ";oeaiffhbv;erb;eubr";
-	char	str2[20] = "hello";
-
-	printf("strlen:  %zu\n", strlen(str1));
-	printf("ft_strlen:  %zu", ft_strlen(str2));
-	return (0);
 }

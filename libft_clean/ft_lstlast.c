@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 18:23:33 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/28 13:21:39 by shaas            ###   ########.fr       */
+/*   Created: 2021/07/12 20:15:47 by shaas             #+#    #+#             */
+/*   Updated: 2021/07/19 19:52:31 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
-#include <string.h>
 
-size_t	ft_strlen(const char *s)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	num;
+	t_list	*curr;
 
-	num = 0;
-	while (*s != '\0')
-	{
-		num++;
-		s++;
-	}
-	return (num);
-}
-
-int	main(void)
-{
-	char	str1[20] = ";oeaiffhbv;erb;eubr";
-	char	str2[20] = "hello";
-
-	printf("strlen:  %zu\n", strlen(str1));
-	printf("ft_strlen:  %zu", ft_strlen(str2));
-	return (0);
+	curr = lst;
+	if (curr == NULL)
+		return (curr);
+	while (curr->next != NULL)
+		curr = curr->next;
+	return (curr);
 }

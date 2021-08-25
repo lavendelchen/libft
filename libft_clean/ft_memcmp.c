@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 18:23:33 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/28 13:21:39 by shaas            ###   ########.fr       */
+/*   Created: 2021/06/21 16:18:10 by shaas             #+#    #+#             */
+/*   Updated: 2021/06/25 15:26:46 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	num;
+	size_t				i;
+	const unsigned char	*char_s1;
+	const unsigned char	*char_s2;
 
-	num = 0;
-	while (*s != '\0')
+	char_s1 = (const unsigned char *)s1;
+	char_s2 = (const unsigned char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		num++;
-		s++;
+		if (*char_s1 != *char_s2)
+			return (*char_s1 - *char_s2);
+		char_s1++;
+		char_s2++;
+		i++;
 	}
-	return (num);
-}
-
-int	main(void)
-{
-	char	str1[20] = ";oeaiffhbv;erb;eubr";
-	char	str2[20] = "hello";
-
-	printf("strlen:  %zu\n", strlen(str1));
-	printf("ft_strlen:  %zu", ft_strlen(str2));
 	return (0);
 }

@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 18:23:33 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/28 13:21:39 by shaas            ###   ########.fr       */
+/*   Created: 2021/06/16 10:38:14 by shaas             #+#    #+#             */
+/*   Updated: 2021/06/28 13:22:22 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	num;
+	size_t	i;
+	size_t	srclen;
 
-	num = 0;
-	while (*s != '\0')
+	i = 0;
+	srclen = ft_strlen(src);
+	if (dstsize == 0)
+		return (srclen);
+	while (i < dstsize - 1 && i < srclen)
 	{
-		num++;
-		s++;
+		*dst = *src;
+		dst++;
+		src++;
+		i++;
 	}
-	return (num);
-}
-
-int	main(void)
-{
-	char	str1[20] = ";oeaiffhbv;erb;eubr";
-	char	str2[20] = "hello";
-
-	printf("strlen:  %zu\n", strlen(str1));
-	printf("ft_strlen:  %zu", ft_strlen(str2));
-	return (0);
+	*dst = '\0';
+	return (srclen);
 }

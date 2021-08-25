@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 18:23:33 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/28 13:21:39 by shaas            ###   ########.fr       */
+/*   Created: 2021/06/23 12:45:35 by shaas             #+#    #+#             */
+/*   Updated: 2021/06/25 15:27:26 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	num;
+	size_t				i;
+	const unsigned char	*un_s1;
+	const unsigned char	*un_s2;
 
-	num = 0;
-	while (*s != '\0')
+	un_s1 = (const unsigned char *)s1;
+	un_s2 = (const unsigned char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		num++;
-		s++;
+		if (*un_s1 != *un_s2)
+			return (*un_s1 - *un_s2);
+		if (*un_s1 == '\0' && *un_s2 == '\0')
+			return (0);
+		un_s1++;
+		un_s2++;
+		i++;
 	}
-	return (num);
-}
-
-int	main(void)
-{
-	char	str1[20] = ";oeaiffhbv;erb;eubr";
-	char	str2[20] = "hello";
-
-	printf("strlen:  %zu\n", strlen(str1));
-	printf("ft_strlen:  %zu", ft_strlen(str2));
 	return (0);
 }

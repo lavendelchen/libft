@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 18:23:33 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/28 13:21:39 by shaas            ###   ########.fr       */
+/*   Created: 2021/07/03 14:34:08 by shaas             #+#    #+#             */
+/*   Updated: 2021/07/03 16:02:12 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strdup(const char *s1)
 {
-	size_t	num;
+	char	*cpy;
+	size_t	size;
+	size_t	i;
 
-	num = 0;
-	while (*s != '\0')
+	i = 0;
+	size = ft_strlen(s1) + 1;
+	cpy = (char *)malloc(size);
+	if (cpy == NULL)
+		return (cpy);
+	while (s1[i] != '\0')
 	{
-		num++;
-		s++;
+		cpy[i] = s1[i];
+		i++;
 	}
-	return (num);
-}
-
-int	main(void)
-{
-	char	str1[20] = ";oeaiffhbv;erb;eubr";
-	char	str2[20] = "hello";
-
-	printf("strlen:  %zu\n", strlen(str1));
-	printf("ft_strlen:  %zu", ft_strlen(str2));
-	return (0);
+	cpy[i] = '\0';
+	return (cpy);
 }
