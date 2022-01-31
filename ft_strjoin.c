@@ -6,12 +6,13 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:34:21 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/06 13:11:40 by shaas            ###   ########.fr       */
+/*   Updated: 2022/01/30 21:10:00 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*is not null protected. will segfault if you enter NULL string.*/
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	int		i;
