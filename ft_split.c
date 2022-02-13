@@ -6,7 +6,7 @@
 /*   By: shaas <shaas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:36:02 by shaas             #+#    #+#             */
-/*   Updated: 2021/07/28 13:45:14 by shaas            ###   ########.fr       */
+/*   Updated: 2021/07/20 16:20:53 by shaas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,4 @@ char	**ft_split(const char *s, char c)
 	if (ft_insert (s, c, split) == 0)
 		return (NULL);
 	return (split);
-}
-
-int	main(void)
-{
-	char	str[] = "      Kamil is a      really good software engineer and also really good ping pong player   ";
-
-	char	**arr = ft_split(str, 'e');
-	for (int i = 0; arr[i]; i++)
-		printf("[%s]\n", arr[i]);
-	return(0);
 }
